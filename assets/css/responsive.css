@@ -180,7 +180,7 @@
     width: 300px;
     max-width: 80vw;
     height: 100vh;
-    background: linear-gradient(180deg, var(--bg-dark), #5D4E75);
+    background: linear-gradient(180deg, var(--bg-dark), #5d4e75);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -197,13 +197,17 @@
   }
 
   .nav-menu::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--accent-color)
+    );
     opacity: 0.1;
   }
 
@@ -253,8 +257,7 @@
     margin: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                padding 0.4s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
     padding: 0;
     border: none;
   }
@@ -277,7 +280,7 @@
   }
 
   .dropdown-menu a::before {
-    content: '•';
+    content: "•";
     position: absolute;
     left: 24px;
     color: var(--accent-color);
@@ -296,7 +299,7 @@
   }
 
   .dropdown-toggle::after {
-    content: '+';
+    content: "+";
     position: absolute;
     right: 24px;
     font-size: 1.2rem;
@@ -306,7 +309,7 @@
   }
 
   .dropdown.active .dropdown-toggle::after {
-    content: '−';
+    content: "−";
     transform: rotate(180deg);
   }
 
@@ -320,7 +323,7 @@
 
   /* Mobile menu overlay */
   .nav-menu.active::after {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
