@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery | Sri Mallikarjuna Temple, Mrugavadhe</title>
+    <meta
+      name="description"
+      content="Explore beautiful photos of Sri Mallikarjuna Temple, including temple architecture, deities, festivals, and sacred rituals."
+    />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="../assets/images/om-symbol.svg"
+              alt="Om Symbol"
+              class="logo-img"
+            />
+            <div class="logo-text">
+              <h1><a href="../index.html">Sri Mallikarjuna Temple</a></h1>
+              <p>Mrugavadhe</p>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li><a href="../index.html">Home</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                  >About <i class="fas fa-chevron-down"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="history.html">History & Legend</a></li>
+                  <li><a href="architecture.html">Architecture</a></li>
+                  <li><a href="trust.html">Temple Trust</a></li>
+                </ul>
+              </li>
+              <li><a href="deities.html">Deities</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                  >Worship <i class="fas fa-chevron-down"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="puja-seva.html">Puja & Seva</a></li>
+                  <li><a href="festivals.html">Festivals</a></li>
+                  <li><a href="rituals.html">Special Rituals</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                  >Visit <i class="fas fa-chevron-down"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="darshan-timings.html">Darshan Timings</a></li>
+                  <li><a href="visitor-info.html">Visitor Guidelines</a></li>
+                  <li><a href="accommodation.html">Accommodation</a></li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="active">Gallery</a></li>
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="../index.html">Home</a>
+          <span class="separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="current">Photo Gallery</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="page-header-content">
+          <h1>Photo Gallery</h1>
+          <p class="page-subtitle">Glimpses of Divine Beauty and Sacred Moments</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Gallery Categories -->
+        <section class="gallery-categories">
+          <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All Photos</button>
+            <button class="filter-btn" data-category="temple">Temple Architecture</button>
+            <button class="filter-btn" data-category="deities">Sacred Deities</button>
+            <button class="filter-btn" data-category="festivals">Festivals</button>
+            <button class="filter-btn" data-category="rituals">Rituals & Prayers</button>
+            <button class="filter-btn" data-category="surroundings">Temple Surroundings</button>
+          </div>
+        </section>
+
+        <!-- Photo Gallery Grid -->
+        <section class="photo-gallery">
+          <div class="gallery-grid">
+            <!-- Temple Architecture Photos -->
+            <div class="gallery-item" data-category="temple">
+              <img
+                src="https://www.en.thirthahalli.org/wp-content/uploads/2023/07/ಮೃಗಾವಧೆ-3-.webp"
+                alt="Temple Exterior"
+                data-title="Sri Mallikarjuna Temple - Exterior View"
+                data-description="Beautiful exterior view of the ancient temple with traditional South Indian architecture."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Temple Exterior</h3>
+                  <p>Ancient Architecture</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="temple">
+              <img
+                src="https://www.en.thirthahalli.org/wp-content/uploads/2023/07/ಮೃಗಾವಧೆ-4.webp"
+                alt="Temple Interior"
+                data-title="Temple Interior - Sacred Sanctum"
+                data-description="Interior view showcasing the sacred sanctum and traditional temple design elements."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Sacred Sanctum</h3>
+                  <p>Interior View</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="temple">
+              <img
+                src="https://www.en.thirthahalli.org/wp-content/uploads/2024/08/IMG_20240810_141707.jpg"
+                alt="Temple Premises"
+                data-title="Temple Premises and Courtyard"
+                data-description="Spacious temple courtyard surrounded by lush greenery and peaceful environment."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Temple Courtyard</h3>
+                  <p>Sacred Premises</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Deity Photos -->
+            <div class="gallery-item" data-category="deities">
+              <img
+                src="https://www.en.thirthahalli.org/wp-content/uploads/2024/08/IMG_20240810_132844.jpg"
+                alt="Shivalinga"
+                data-title="Sacred Shivalinga of Mallikarjuna"
+                data-description="The magnificent 4.5 feet tall Shivalinga installed by Lord Rama himself."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Sacred Shivalinga</h3>
+                  <p>Mallikarjuna</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Placeholder images for other categories -->
+            <div class="gallery-item" data-category="deities">
+              <img
+                src="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Lord+Ganesha"
+                alt="Lord Ganesha"
+                data-title="Sri Ganesha - The Remover of Obstacles"
+                data-description="Beautiful idol of Lord Ganesha, the beloved deity who blesses devotees before they pray to Lord Shiva."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Lord Ganesha</h3>
+                  <p>Vigna Harta</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="deities">
+              <img
+                src="https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Nandi+Bull"
+                alt="Nandi"
+                data-title="Sacred Nandi - Lord Shiva's Vehicle"
+                data-description="The faithful Nandi bull, vehicle and devotee of Lord Shiva, positioned in front of the sanctum."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Sacred Nandi</h3>
+                  <p>Shiva's Vehicle</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Festival Photos -->
+            <div class="gallery-item" data-category="festivals">
+              <img
+                src="https://via.placeholder.com/400x300/FFD700/8B4513?text=Maha+Shivaratri"
+                alt="Maha Shivaratri"
+                data-title="Maha Shivaratri Celebration"
+                data-description="Grand celebration of Maha Shivaratri with thousands of devotees participating in night-long prayers."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Maha Shivaratri</h3>
+                  <p>Night of Shiva</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="festivals">
+              <img
+                src="https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Rathotsava+Festival"
+                alt="Rathotsava"
+                data-title="Annual Rathotsava - Chariot Festival"
+                data-description="The grand chariot festival where the deity is taken in procession through the village streets."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Rathotsava</h3>
+                  <p>Chariot Festival</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="festivals">
+              <img
+                src="https://via.placeholder.com/400x300/8B4513/FFD700?text=Ram+Navami"
+                alt="Ram Navami"
+                data-title="Ram Navami Celebration"
+                data-description="Special celebration of Lord Rama's birthday, commemorating his connection to this sacred place."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Ram Navami</h3>
+                  <p>Rama's Birthday</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Ritual Photos -->
+            <div class="gallery-item" data-category="rituals">
+              <img
+                src="https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Abhisheka+Ritual"
+                alt="Abhisheka"
+                data-title="Sacred Abhisheka Ceremony"
+                data-description="Ritual bathing of the Shivalinga with milk, honey, and other sacred offerings during daily worship."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Abhisheka Ritual</h3>
+                  <p>Sacred Bathing</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="rituals">
+              <img
+                src="https://via.placeholder.com/400x300/8B4513/FFD700?text=Evening+Aarti"
+                alt="Evening Aarti"
+                data-title="Evening Aarti - Divine Light Ceremony"
+                data-description="Beautiful evening aarti with oil lamps and incense, creating a divine atmosphere of devotion."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Evening Aarti</h3>
+                  <p>Divine Lights</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="rituals">
+              <img
+                src="https://via.placeholder.com/400x300/FFD700/8B4513?text=Homa+Ceremony"
+                alt="Homa"
+                data-title="Sacred Fire Ritual - Homa"
+                data-description="Traditional fire ceremony performed during special occasions with Vedic mantras and offerings."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Sacred Homa</h3>
+                  <p>Fire Ritual</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Temple Surroundings -->
+            <div class="gallery-item" data-category="surroundings">
+              <img
+                src="https://via.placeholder.com/400x300/228B22/FFFFFF?text=Temple+Garden"
+                alt="Temple Garden"
+                data-title="Temple Garden and Sacred Trees"
+                data-description="Lush garden surrounding the temple with medicinal plants and sacred trees including bilva trees."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Temple Garden</h3>
+                  <p>Sacred Greenery</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="surroundings">
+              <img
+                src="https://via.placeholder.com/400x300/4169E1/FFFFFF?text=River+View"
+                alt="River View"
+                data-title="Tunga River View from Temple"
+                data-description="Beautiful view of the sacred Tunga River flowing near the temple, adding to the serene atmosphere."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>River View</h3>
+                  <p>Sacred Tunga</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="surroundings">
+              <img
+                src="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Village+View"
+                alt="Village"
+                data-title="Mrugavadhe Village"
+                data-description="Scenic view of the peaceful Mrugavadhe village where the temple is located, surrounded by nature."
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <h3>Village View</h3>
+                  <p>Mrugavadhe</p>
+                </div>
+                <button class="gallery-zoom" onclick="openLightbox(this.parentElement.parentElement)">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Photo Statistics -->
+        <section class="gallery-stats">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" id="totalPhotos">15</div>
+              <div class="stat-label">Total Photos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Years of Heritage</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">1000+</div>
+              <div class="stat-label">Annual Visitors</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+      <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">
+          <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" onclick="previousImage()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" onclick="nextImage()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="lightbox-image-container">
+          <img id="lightboxImage" src="" alt="">
+          <div class="lightbox-info">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDescription"></p>
+          </div>
+        </div>
+        
+        <div class="lightbox-counter">
+          <span id="currentImageIndex">1</span> / <span id="totalImages">15</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="../assets/images/om-symbol.svg"
+                alt="Om Symbol"
+                class="logo-img"
+              />
+              <div class="logo-text">
+                <h3>Sri Mallikarjuna Temple</h3>
+                <p>Mrugavadhe</p>
+              </div>
+            </div>
+            <p class="temple-description">
+              Ancient temple with mythological significance from Ramayana,
+              featuring a 4.5 feet tall Shivalinga installed by Lord Rama
+              himself.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="darshan-timings.html">Darshan Timings</a></li>
+              <li><a href="puja-seva.html">Puja & Seva</a></li>
+              <li><a href="festivals.html">Festivals</a></li>
+              <li><a href="donate.html">Donations</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Temple Info</h4>
+            <ul>
+              <li><a href="history.html">History & Legend</a></li>
+              <li><a href="deities.html">Deities</a></li>
+              <li><a href="visitor-info.html">Visitor Guidelines</a></li>
+              <li><a href="accommodation.html">Accommodation</a></li>
+              <li><a href="trust.html">Temple Trust</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>
+                  Mrugavadhe Village, Thirthahalli Taluk<br />
+                  Shivamogga District, Karnataka
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+91 XXXXX XXXXX</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>info@mallikarjunatemple.org</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>
+              &copy; 2025 Sri Mallikarjuna Temple, Mrugavadhe. All rights
+              reserved.
+            </p>
+            <div class="footer-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+              <a href="sitemap.html">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    
+    <!-- Gallery Script -->
+    <script>
+      let currentImageIndex = 0;
+      let filteredImages = [];
+
+      // Gallery filtering
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          const category = this.dataset.category;
+          const galleryItems = document.querySelectorAll('.gallery-item');
+          
+          let visibleCount = 0;
+          galleryItems.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+              item.style.display = 'block';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          // Update filtered images array for lightbox navigation
+          updateFilteredImages();
+          
+          // Update total photos counter
+          document.getElementById('totalPhotos').textContent = visibleCount;
+        });
+      });
+
+      // Update filtered images array
+      function updateFilteredImages() {
+        filteredImages = Array.from(document.querySelectorAll('.gallery-item'))
+          .filter(item => item.style.display !== 'none')
+          .map(item => ({
+            src: item.querySelector('img').src,
+            title: item.querySelector('img').dataset.title,
+            description: item.querySelector('img').dataset.description
+          }));
+      }
+
+      // Initialize filtered images
+      updateFilteredImages();
+
+      // Lightbox functionality
+      function openLightbox(galleryItem) {
+        const img = galleryItem.querySelector('img');
+        const modal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const title = document.getElementById('lightboxTitle');
+        const description = document.getElementById('lightboxDescription');
+        
+        // Find current image index in filtered array
+        const currentSrc = img.src;
+        currentImageIndex = filteredImages.findIndex(item => item.src === currentSrc);
+        
+        lightboxImg.src = img.src;
+        title.textContent = img.dataset.title;
+        description.textContent = img.dataset.description;
+        
+        updateLightboxCounter();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        const modal = document.getElementById('lightboxModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function nextImage() {
+        if (currentImageIndex < filteredImages.length - 1) {
+          currentImageIndex++;
+          updateLightboxImage();
+        }
+      }
+
+      function previousImage() {
+        if (currentImageIndex > 0) {
+          currentImageIndex--;
+          updateLightboxImage();
+        }
+      }
+
+      function updateLightboxImage() {
+        const currentImage = filteredImages[currentImageIndex];
+        const lightboxImg = document.getElementById('lightboxImage');
+        const title = document.getElementById('lightboxTitle');
+        const description = document.getElementById('lightboxDescription');
+        
+        lightboxImg.src = currentImage.src;
+        title.textContent = currentImage.title;
+        description.textContent = currentImage.description;
+        
+        updateLightboxCounter();
+      }
+
+      function updateLightboxCounter() {
+        document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
+        document.getElementById('totalImages').textContent = filteredImages.length;
+      }
+
+      // Close lightbox with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+          nextImage();
+        } else if (e.key === 'ArrowLeft') {
+          previousImage();
+        }
+      });
+
+      // Close lightbox when clicking outside image
+      document.getElementById('lightboxModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeLightbox();
+        }
+      });
+    </script>
+
+    <style>
+      /* Gallery Styles */
+      .gallery-categories {
+        margin-bottom: 3rem;
+      }
+
+      .category-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-btn {
+        background: transparent;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-info {
+        align-self: flex-end;
+        color: white;
+        text-align: left;
+      }
+
+      .gallery-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      .gallery-info p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        color: var(--accent-color);
+      }
+
+      .gallery-zoom {
+        align-self: flex-start;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-zoom:hover {
+        background: var(--accent-color);
+        transform: scale(1.1);
+      }
+
+      /* Gallery Stats */
+      .gallery-stats {
+        background: linear-gradient(135deg, var(--bg-light), white);
+        padding: 3rem 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .stat-item {
+        padding: 1rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        color: var(--secondary-color);
+        font-weight: 500;
+      }
+
+      /* Lightbox Styles */
+      .lightbox-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .lightbox-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lightbox-image-container {
+        text-align: center;
+      }
+
+      #lightboxImage {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      .lightbox-info {
+        color: white;
+        padding: 1rem;
+        max-width: 600px;
+      }
+
+      .lightbox-info h3 {
+        color: var(--accent-color);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .lightbox-close,
+      .lightbox-prev,
+      .lightbox-next {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox-close {
+        top: 20px;
+        right: 20px;
+      }
+
+      .lightbox-prev {
+        left: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .lightbox-next {
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .lightbox-close:hover,
+      .lightbox-prev:hover,
+      .lightbox-next:hover {
+        background: var(--primary-color);
+        transform: scale(1.1);
+      }
+
+      .lightbox-prev:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .lightbox-next:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .lightbox-counter {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .category-filters {
+          justify-content: flex-start;
+          overflow-x: auto;
+          padding-bottom: 10px;
+        }
+
+        .filter-btn {
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+          width: 40px;
+          height: 40px;
+        }
+
+        .lightbox-prev {
+          left: 20px;
+        }
+
+        .lightbox-next {
+          right: 20px;
+        }
+      }
+    </style>
+  </body>
+</html>
