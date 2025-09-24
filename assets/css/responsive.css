@@ -1,0 +1,901 @@
+/* ====================================
+   Responsive Styles - Sri Mallikarjuna Temple
+   ==================================== */
+
+/* Large Desktop */
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero {
+        height: 85vh;
+    }
+    
+    .slide-content h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Desktop */
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 15px;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr 350px;
+        gap: 2rem;
+    }
+    
+    .location-content {
+        grid-template-columns: 1fr 350px;
+        gap: 2rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr 280px;
+        gap: 2rem;
+    }
+}
+
+/* Tablet Landscape */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Header adjustments */
+    .header-content {
+        padding: 0.8rem 0;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-menu a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hero adjustments */
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .slide-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.1rem;
+    }
+    
+    /* Quick actions grid */
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* About section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .about-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    /* Events grid */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Location section */
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Content wrapper */
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        order: -1;
+    }
+    
+    /* Timing cards */
+    .timing-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Contact grid */
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Directions grid */
+    .directions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    /* Typography */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header - Mobile Menu */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: linear-gradient(135deg, var(--bg-dark), #A0522D);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+        z-index: 999;
+        gap: 0;
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 1.1rem;
+    }
+    
+    .dropdown .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: rgba(255,255,255,0.1);
+        box-shadow: none;
+        margin-top: 0.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        max-height: 200px;
+    }
+    
+    .dropdown-menu a {
+        color: rgba(255,255,255,0.9);
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Hero adjustments */
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .slide-content {
+        padding: 1.5rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-nav {
+        padding: 0 1rem;
+    }
+    
+    .hero-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Quick actions */
+    .actions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .action-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    /* Section spacing */
+    .quick-actions,
+    .about-preview,
+    .events-preview,
+    .location-preview {
+        padding: 3rem 0;
+    }
+    
+    /* About section */
+    .about-highlights {
+        gap: 0.8rem;
+    }
+    
+    .highlight {
+        padding: 0.8rem;
+    }
+    
+    /* Events */
+    .event-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .event-date {
+        min-width: auto;
+        width: 80px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    /* Page header */
+    .page-header {
+        padding: 2rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Main content */
+    .main-content {
+        padding: 2rem 0;
+    }
+    
+    .article-content {
+        padding: 1.5rem;
+    }
+    
+    .featured-image {
+        height: 250px;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    
+    .story-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .temple-image-section img {
+        height: 250px;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .image-grid img {
+        height: 200px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    /* Sidebar widgets */
+    .sidebar-widget {
+        padding: 1rem;
+    }
+    
+    /* Contact page */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .directions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Timing cards */
+    .timing-card {
+        padding: 1.5rem;
+    }
+    
+    .timing-details li {
+        font-size: 0.9rem;
+    }
+    
+    .aarti-schedule {
+        gap: 1rem;
+    }
+    
+    .aarti-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .special-timings {
+        gap: 1.5rem;
+    }
+    
+    .special-timing-card {
+        padding: 1.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Contact page specific */
+    .contact-form-section {
+        padding: 2rem 0;
+    }
+    
+    .contact-form {
+        padding: 0;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .map-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 576px) {
+    /* Typography */
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Header */
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.8rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Quick actions */
+    .action-card {
+        padding: 1.5rem;
+    }
+    
+    .action-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* About section */
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    /* Events */
+    .event-date {
+        width: 70px;
+        padding: 0.8rem;
+    }
+    
+    .event-date .day {
+        font-size: 1.5rem;
+    }
+    
+    /* Location details */
+    .detail {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .detail i {
+        margin-top: 0;
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb {
+        padding: 0.8rem 0;
+    }
+    
+    .breadcrumb-nav {
+        font-size: 0.8rem;
+    }
+    
+    /* Page header */
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Article content */
+    .article-content {
+        padding: 1rem;
+    }
+    
+    .featured-image {
+        height: 200px;
+    }
+    
+    .lead {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .story-section {
+        padding: 0.8rem;
+    }
+    
+    .story-section h3 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .temple-image-section img {
+        height: 200px;
+    }
+    
+    .distance-list li {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    
+    /* Sidebar */
+    .sidebar-widget {
+        padding: 0.8rem;
+    }
+    
+    .info-item {
+        padding: 0.6rem;
+    }
+    
+    .related-links a {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Contact cards */
+    .contact-card {
+        padding: 1rem;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    /* Forms */
+    .contact-form {
+        padding: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Timing cards */
+    .timing-card {
+        padding: 1rem;
+    }
+    
+    .timing-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .aarti-time {
+        min-width: 80px;
+    }
+    
+    .aarti-time .time {
+        font-size: 0.9rem;
+    }
+    
+    .special-timing-card {
+        padding: 1rem;
+    }
+    
+    .occasion-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .info-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    /* Map */
+    .map-container {
+        height: 250px;
+    }
+    
+    .map-placeholder i {
+        font-size: 2rem;
+    }
+    
+    /* FAQ */
+    .faq-question h4 {
+        font-size: 1rem;
+    }
+    
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 1rem;
+    }
+    
+    .temple-description {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom-content {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    /* Header */
+    .header-content {
+        padding: 0.6rem 0;
+    }
+    
+    .logo {
+        gap: 10px;
+    }
+    
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.7rem;
+    }
+    
+    /* Hero */
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    /* Quick actions */
+    .action-card {
+        padding: 1rem;
+    }
+    
+    .action-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Events */
+    .event-card {
+        padding: 1rem;
+    }
+    
+    .event-date {
+        width: 60px;
+        padding: 0.6rem;
+    }
+    
+    /* Article content */
+    .featured-image {
+        height: 180px;
+    }
+    
+    .temple-image-section img {
+        height: 180px;
+    }
+    
+    /* Contact */
+    .contact-card {
+        padding: 0.8rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Forms */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+    
+    /* Timing cards */
+    .timing-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .time-slot .time {
+        font-size: 1.1rem;
+    }
+    
+    /* Map */
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* Print specific media query */
+@media print {
+    /* Hide navigation and interactive elements */
+    .header,
+    .breadcrumb,
+    .sidebar,
+    .footer,
+    .hero-nav,
+    .hero-dots,
+    .cta-buttons,
+    .share-buttons,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    /* Adjust main content */
+    .main-content {
+        margin-top: 0;
+        padding: 0;
+    }
+    
+    .page-header {
+        background: none;
+        color: black;
+        padding: 1rem 0;
+        border-bottom: 2px solid #ccc;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    /* Typography adjustments for print */
+    body {
+        font-size: 11pt;
+        line-height: 1.4;
+        color: black;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: black;
+        page-break-after: avoid;
+    }
+    
+    p, li {
+        orphans: 2;
+        widows: 2;
+    }
+    
+    /* Ensure images fit well */
+    img {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+    }
+    
+    /* Remove shadows and gradients */
+    * {
+        box-shadow: none !important;
+        background: white !important;
+        border-radius: 0 !important;
+    }
+    
+    /* Keep essential borders and styling */
+    .story-section {
+        border-left: 3px solid #666;
+        padding-left: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .lead {
+        border-left: 3px solid #666;
+        padding-left: 1rem;
+        font-weight: bold;
+    }
+}
