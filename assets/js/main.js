@@ -3,27 +3,94 @@
 // ====================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Mobile Menu Toggle
-  initMobileMenu();
-
-  // Hero Slider
-  initHeroSlider();
-
-  // Smooth Scrolling
-  initSmoothScrolling();
-
-  // Header Scroll Effect
-  initHeaderScroll();
-
-  // Form Handling
-  initForms();
-
-  // Animation on Scroll
-  initAnimationOnScroll();
-
-  // Dropdown Menus
-  initDropdownMenus();
+  // Initialize all features
+  try {
+    // Core functionality
+    initMobileMenu();
+    initHeroSlider();
+    initSmoothScrolling();
+    initHeaderScroll();
+    initForms();
+    initAnimationOnScroll();
+    initDropdownMenus();
+    initScrollToTop();
+    
+    // Register service worker for PWA
+    registerServiceWorker();
+    
+    // Performance monitoring
+    monitorPerformance();
+    
+    // Error handling
+    setupGlobalErrorHandling();
+    
+  } catch (error) {
+    console.error('Error initializing website:', error);
+    // Fallback functionality or user notification
+  }
 });
+
+// Service Worker Registration
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('SW registered: ', registration);
+        })
+        .catch((registrationError) => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
+}
+
+// Performance Monitoring
+function monitorPerformance() {
+  // Monitor Core Web Vitals
+  if ('PerformanceObserver' in window) {
+    // Monitor Largest Contentful Paint (LCP)
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+          console.log('LCP:', entry.startTime);
+        }
+      }
+    }).observe({entryTypes: ['largest-contentful-paint']});
+    
+    // Monitor First Input Delay (FID)
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (entry.entryType === 'first-input') {
+          const fid = entry.processingStart - entry.startTime;
+          console.log('FID:', fid);
+        }
+      }
+    }).observe({entryTypes: ['first-input']});
+    
+    // Monitor Cumulative Layout Shift (CLS)
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (entry.entryType === 'layout-shift' && !entry.hadRecentInput) {
+          console.log('Layout shift:', entry.value);
+        }
+      }
+    }).observe({entryTypes: ['layout-shift']});
+  }
+}
+
+// Global Error Handling
+function setupGlobalErrorHandling() {
+  window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
+    // Could send to error tracking service
+  });
+  
+  window.addEventListener('unhandledrejection', (event) => {
+    console.error('Unhandled promise rejection:', event.reason);
+    // Could send to error tracking service
+  });
+}
 
 // Mobile Menu Toggle Functionality
 function initMobileMenu() {
