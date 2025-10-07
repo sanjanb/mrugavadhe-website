@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow access to CSS and JS files
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /scripts/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://mrugavadhe-temple.com/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
