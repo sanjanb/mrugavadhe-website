@@ -22,7 +22,5 @@
     "long-title": "error",
     "meta-refresh": "error"
   },
-  "elements": [
-    "html5"
-  ]
+  "elements": ["html5"]
 }

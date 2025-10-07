@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
+  "extends": ["stylelint-config-standard"],
   "rules": {
     "indentation": 2,
     "string-quotes": "double",
@@ -34,12 +32,15 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
       }
     ]
   },
-  "ignoreFiles": [
-    "dist/**/*.css",
-    "node_modules/**/*.css"
-  ]
+  "ignoreFiles": ["dist/**/*.css", "node_modules/**/*.css"]
 }
