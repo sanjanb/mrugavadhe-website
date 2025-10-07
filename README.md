@@ -4,12 +4,12 @@ Official website for Sri Mallikarjuna Temple, Mrugavadhe - an ancient Shiva temp
 
 ## Features
 
-- 📱 **Responsive Design** - Works perfectly on all devices
-- ⚡ **Fast Loading** - Optimized for performance
-- 🔒 **Secure** - Implements security best practices
-- 🎯 **SEO Optimized** - Search engine friendly
-- 🌐 **PWA Ready** - Progressive Web App capabilities
-- ♿ **Accessible** - WCAG compliant accessibility features
+- **Responsive Design** - Works perfectly on all devices
+- **Fast Loading** - Optimized for performance
+- **Secure** - Implements security best practices
+- **SEO Optimized** - Search engine friendly
+- **PWA Ready** - Progressive Web App capabilities
+- **Accessible** - WCAG compliant accessibility features
 
 ## Tech Stack
 
