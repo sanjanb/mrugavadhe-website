@@ -1,4 +1,7 @@
-import { generateImageSitemap, generateStaticSitemap } from './sitemap-utils.js';
+import {
+  generateImageSitemap,
+  generateStaticSitemap,
+} from "./sitemap-utils.js";
 
 // Generate static files sitemap
 generateStaticSitemap();
