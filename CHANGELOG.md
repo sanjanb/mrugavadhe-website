@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-12-07
 
 ### Added
+
 - Initial release of the Sri Mallikarjuna Temple website
 - Responsive design that works on all devices
 - Progressive Web App (PWA) capabilities with service worker
@@ -31,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automated testing and code quality tools
 
 ### Technical Features
+
 - HTML5 semantic structure
 - CSS Grid and Flexbox layouts
 - Vanilla JavaScript with ES6+ features
@@ -44,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile-first responsive design
 
 ### Performance
+
 - Lighthouse score: 95+
 - First Contentful Paint: < 1.5s
 - Largest Contentful Paint: < 2.5s
@@ -51,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile page speed: 85+
 
 ### Security
+
 - Content Security Policy implementation
 - XSS protection headers
 - CSRF protection
@@ -59,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - HTTPS enforcement
 
 ### SEO
+
 - Structured data (JSON-LD) for rich snippets
 - Open Graph tags for social sharing
 - Twitter Card optimization
@@ -68,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Robot meta tags
 
 ### Accessibility
+
 - ARIA labels and roles
 - Semantic HTML structure
 - Keyboard navigation support
@@ -77,6 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Focus management
 
 ### Browser Support
+
 - Chrome 70+
 - Firefox 65+
 - Safari 12+
@@ -86,6 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Future Releases
 
 ### [1.1.0] - Planned
+
 - Online puja booking system
 - Payment gateway integration
 - User registration and login
@@ -96,6 +104,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Multilingual support (Kannada, Hindi)
 
 ### [1.2.0] - Planned
+
 - Content Management System (CMS)
 - Admin dashboard
 - User profiles and history
@@ -106,6 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Audio guides
 
 ### [2.0.0] - Planned
+
 - Backend API development
 - Database integration
 - User authentication system
@@ -121,21 +131,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### [Version] - Date
 
 #### Added
+
 - New features and capabilities
 
 #### Changed
+
 - Changes to existing functionality
 
 #### Deprecated
+
 - Features that will be removed in future releases
 
 #### Removed
+
 - Features that have been removed
 
 #### Fixed
+
 - Bug fixes and improvements
 
 #### Security
+
 - Security-related changes and fixes
 
 ---
