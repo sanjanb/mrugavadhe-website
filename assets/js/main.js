@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Error handling
     setupGlobalErrorHandling();
-    
+
     // Mobile-specific enhancements
     initMobileEnhancements();
   } catch (error) {
@@ -750,31 +750,33 @@ document.head.appendChild(style);
 function initMobileEnhancements() {
   // Improve touch responsiveness
   addTouchFeedback();
-  
+
   // Handle orientation changes
   handleOrientationChange();
-  
+
   // Optimize for mobile browsers
   optimizeForMobileBrowsers();
-  
+
   // Add swipe gestures for hero slider
   addSwipeGestures();
 }
 
 // Add visual feedback for touch interactions
 function addTouchFeedback() {
-  const touchElements = document.querySelectorAll('.btn-primary, .btn-secondary, .action-card, .nav-menu a');
-  
-  touchElements.forEach(element => {
-    element.addEventListener('touchstart', function() {
-      this.style.transform = 'scale(0.98)';
-      this.style.transition = 'transform 0.1s ease';
+  const touchElements = document.querySelectorAll(
+    ".btn-primary, .btn-secondary, .action-card, .nav-menu a"
+  );
+
+  touchElements.forEach((element) => {
+    element.addEventListener("touchstart", function () {
+      this.style.transform = "scale(0.98)";
+      this.style.transition = "transform 0.1s ease";
     });
-    
-    element.addEventListener('touchend', function() {
+
+    element.addEventListener("touchend", function () {
       setTimeout(() => {
-        this.style.transform = '';
-        this.style.transition = '';
+        this.style.transform = "";
+        this.style.transition = "";
       }, 100);
     });
   });
@@ -782,22 +784,22 @@ function addTouchFeedback() {
 
 // Handle orientation changes
 function handleOrientationChange() {
-  window.addEventListener('orientationchange', function() {
+  window.addEventListener("orientationchange", function () {
     // Close mobile menu on orientation change
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
+    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
     if (mobileMenuToggle && navMenu) {
-      mobileMenuToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.classList.remove('menu-open');
+      mobileMenuToggle.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
     }
-    
+
     // Recalculate hero height
     setTimeout(() => {
-      const hero = document.querySelector('.hero');
+      const hero = document.querySelector(".hero");
       if (hero) {
-        hero.style.height = Math.min(window.innerHeight * 0.7, 500) + 'px';
+        hero.style.height = Math.min(window.innerHeight * 0.7, 500) + "px";
       }
     }, 500);
   });
@@ -807,70 +809,82 @@ function handleOrientationChange() {
 function optimizeForMobileBrowsers() {
   // Prevent zoom on input focus (iOS Safari)
   if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-      if (input.type !== 'checkbox' && input.type !== 'radio') {
+    const inputs = document.querySelectorAll("input, select, textarea");
+    inputs.forEach((input) => {
+      if (input.type !== "checkbox" && input.type !== "radio") {
         const currentSize = window.getComputedStyle(input).fontSize;
         if (parseFloat(currentSize) < 16) {
-          input.style.fontSize = '16px';
+          input.style.fontSize = "16px";
         }
       }
     });
   }
-  
+
   // Improve performance on mobile
   if (window.innerWidth <= 768) {
     // Reduce animation complexity on mobile
-    document.documentElement.style.setProperty('--animation-duration', '0.2s');
+    document.documentElement.style.setProperty("--animation-duration", "0.2s");
   }
 }
 
 // Add swipe gestures for hero slider
 function addSwipeGestures() {
-  const heroSlider = document.querySelector('.hero-slider');
+  const heroSlider = document.querySelector(".hero-slider");
   if (!heroSlider) return;
-  
+
   let startX = 0;
   let startY = 0;
   let distX = 0;
   let distY = 0;
   let isScrolling;
-  
-  heroSlider.addEventListener('touchstart', function(e) {
-    const touch = e.touches[0];
-    startX = touch.clientX;
-    startY = touch.clientY;
-    isScrolling = undefined;
-  }, { passive: true });
-  
-  heroSlider.addEventListener('touchmove', function(e) {
-    const touch = e.touches[0];
-    distX = touch.clientX - startX;
-    distY = touch.clientY - startY;
-    
-    if (isScrolling === undefined) {
-      isScrolling = Math.abs(distY) > Math.abs(distX);
-    }
-    
-    if (!isScrolling) {
-      e.preventDefault(); // Prevent scrolling only for horizontal swipes
-    }
-  }, { passive: false });
-  
-  heroSlider.addEventListener('touchend', function(e) {
-    if (isScrolling) return; // Don't handle if user was scrolling
-    
-    // Check if it's a horizontal swipe
-    if (Math.abs(distX) > 50) {
-      if (distX > 0) {
-        // Swipe right - previous slide
-        const prevBtn = document.querySelector('.prev-slide');
-        if (prevBtn) prevBtn.click();
-      } else {
-        // Swipe left - next slide
-        const nextBtn = document.querySelector('.next-slide');
-        if (nextBtn) nextBtn.click();
+
+  heroSlider.addEventListener(
+    "touchstart",
+    function (e) {
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      isScrolling = undefined;
+    },
+    { passive: true }
+  );
+
+  heroSlider.addEventListener(
+    "touchmove",
+    function (e) {
+      const touch = e.touches[0];
+      distX = touch.clientX - startX;
+      distY = touch.clientY - startY;
+
+      if (isScrolling === undefined) {
+        isScrolling = Math.abs(distY) > Math.abs(distX);
       }
-    }
-  }, { passive: true });
+
+      if (!isScrolling) {
+        e.preventDefault(); // Prevent scrolling only for horizontal swipes
+      }
+    },
+    { passive: false }
+  );
+
+  heroSlider.addEventListener(
+    "touchend",
+    function (e) {
+      if (isScrolling) return; // Don't handle if user was scrolling
+
+      // Check if it's a horizontal swipe
+      if (Math.abs(distX) > 50) {
+        if (distX > 0) {
+          // Swipe right - previous slide
+          const prevBtn = document.querySelector(".prev-slide");
+          if (prevBtn) prevBtn.click();
+        } else {
+          // Swipe left - next slide
+          const nextBtn = document.querySelector(".next-slide");
+          if (nextBtn) nextBtn.click();
+        }
+      }
+    },
+    { passive: true }
+  );
 }
