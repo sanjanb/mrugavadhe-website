@@ -1,0 +1,68 @@
+{
+  "name": "mallikarjuna-temple-website",
+  "version": "1.0.0",
+  "description": "Official website for Sri Mallikarjuna Temple, Mrugavadhe",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run minify-css && npm run minify-js && npm run optimize-images && npm run generate-sitemap",
+    "minify-css": "cleancss -o dist/assets/css/style.min.css assets/css/style.css && cleancss -o dist/assets/css/responsive.min.css assets/css/responsive.css",
+    "minify-js": "terser assets/js/main.js -o dist/assets/js/main.min.js --compress --mangle",
+    "optimize-images": "imagemin assets/images/* --out-dir=dist/assets/images --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "lint-css": "stylelint assets/css/*.css",
+    "lint-js": "eslint assets/js/*.js",
+    "validate-html": "html-validate *.html pages/*.html",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=reports/lighthouse-report.html",
+    "test": "npm run lint-css && npm run lint-js && npm run validate-html",
+    "deploy": "npm run build && npm run test",
+    "serve": "http-server dist -p 8080",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:css": "nodemon --watch assets/css --ext css --exec \"npm run minify-css\"",
+    "watch:js": "nodemon --watch assets/js --ext js --exec \"npm run minify-js\"",
+    "security-check": "npm audit && snyk test"
+  },
+  "keywords": [
+    "temple",
+    "shiva",
+    "hindu",
+    "karnataka",
+    "thirthahalli",
+    "mrugavadhe",
+    "ramayana"
+  ],
+  "author": "Sri Mallikarjuna Temple Trust",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjanb/mrugavadhe-website.git"
+  },
+  "homepage": "https://mrugavadhe-temple.com",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "eslint": "^8.57.0",
+    "html-validate": "^8.7.4",
+    "http-server": "^14.1.1",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "lighthouse": "^11.4.0",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "snyk": "^1.1268.0",
+    "stylelint": "^16.0.2",
+    "terser": "^5.26.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
