@@ -157,35 +157,69 @@ function initHeroSlider() {
   const dots = document.querySelectorAll(".dot");
   const prevBtn = document.querySelector(".prev-slide");
   const nextBtn = document.querySelector(".next-slide");
+  const slideContents = document.querySelectorAll(".slide-content");
 
   if (slides.length === 0) return;
 
   let currentSlide = 0;
-  const slideInterval = 5000; // 5 seconds
+  const slideInterval = 6000; // 6 seconds for better viewing
   let slideTimer;
+  let isTransitioning = false;
 
-  function showSlide(index) {
-    // Remove active class from all slides and dots
-    slides.forEach((slide) => slide.classList.remove("active"));
-    dots.forEach((dot) => dot.classList.remove("active"));
+  function showSlide(index, direction = 'next') {
+    if (isTransitioning) return;
+    isTransitioning = true;
 
-    // Add active class to current slide and dot
-    slides[index].classList.add("active");
-    if (dots[index]) {
-      dots[index].classList.add("active");
+    // Add exit animations to current slide
+    const currentSlideElement = slides[currentSlide];
+    const currentContent = currentSlideElement.querySelector('.slide-content');
+    
+    if (currentContent) {
+      currentContent.style.animation = direction === 'next' 
+        ? 'slideOutLeft 0.5s ease-in-out' 
+        : 'slideOutRight 0.5s ease-in-out';
     }
 
-    currentSlide = index;
+    setTimeout(() => {
+      // Remove active class from all slides and dots
+      slides.forEach((slide) => slide.classList.remove("active"));
+      dots.forEach((dot) => dot.classList.remove("active"));
+
+      // Add active class to new slide and dot
+      slides[index].classList.add("active");
+      if (dots[index]) {
+        dots[index].classList.add("active");
+      }
+
+      // Add entrance animation to new slide content
+      const newContent = slides[index].querySelector('.slide-content');
+      if (newContent) {
+        newContent.style.animation = direction === 'next'
+          ? 'slideInRight 0.6s ease-out'
+          : 'slideInLeft 0.6s ease-out';
+      }
+
+      currentSlide = index;
+      
+      // Reset transition flag
+      setTimeout(() => {
+        isTransitioning = false;
+        // Reset animations
+        if (newContent) {
+          newContent.style.animation = '';
+        }
+      }, 600);
+    }, 500);
   }
 
   function nextSlide() {
     const next = (currentSlide + 1) % slides.length;
-    showSlide(next);
+    showSlide(next, 'next');
   }
 
   function prevSlide() {
     const prev = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prev);
+    showSlide(prev, 'prev');
   }
 
   function startSlideTimer() {
@@ -196,37 +230,113 @@ function initHeroSlider() {
     clearInterval(slideTimer);
   }
 
-  // Event listeners
+  // Add touch feedback to navigation buttons
+  function addButtonFeedback(button) {
+    if (!button) return;
+    
+    button.addEventListener('touchstart', () => {
+      button.style.transform = 'scale(0.95)';
+    });
+    
+    button.addEventListener('touchend', () => {
+      button.style.transform = 'scale(1)';
+    });
+  }
+
+  // Event listeners with enhanced feedback
   if (nextBtn) {
+    addButtonFeedback(nextBtn);
     nextBtn.addEventListener("click", function () {
       nextSlide();
       stopSlideTimer();
       startSlideTimer();
+      
+      // Haptic feedback on mobile
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
     });
   }
 
   if (prevBtn) {
+    addButtonFeedback(prevBtn);
     prevBtn.addEventListener("click", function () {
       prevSlide();
       stopSlideTimer();
       startSlideTimer();
+      
+      // Haptic feedback on mobile
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
     });
   }
 
-  // Dot navigation
+  // Enhanced dot navigation with better feedback
   dots.forEach((dot, index) => {
     dot.addEventListener("click", function () {
-      showSlide(index);
+      if (index === currentSlide) return;
+      
+      const direction = index > currentSlide ? 'next' : 'prev';
+      showSlide(index, direction);
       stopSlideTimer();
       startSlideTimer();
+      
+      // Haptic feedback
+      if (navigator.vibrate) {
+        navigator.vibrate(30);
+      }
+    });
+    
+    // Touch feedback for dots
+    dot.addEventListener('touchstart', () => {
+      if (index !== currentSlide) {
+        dot.style.transform = 'scale(1.2)';
+      }
+    });
+    
+    dot.addEventListener('touchend', () => {
+      dot.style.transform = '';
     });
   });
 
-  // Pause on hover
+  // Pause on hover/touch with visual feedback
   const heroSection = document.querySelector(".hero");
   if (heroSection) {
     heroSection.addEventListener("mouseenter", stopSlideTimer);
     heroSection.addEventListener("mouseleave", startSlideTimer);
+    
+    // Touch pause functionality
+    let touchPaused = false;
+    heroSection.addEventListener("touchstart", () => {
+      if (!touchPaused) {
+        stopSlideTimer();
+        touchPaused = true;
+      }
+    });
+    
+    heroSection.addEventListener("touchend", () => {
+      setTimeout(() => {
+        if (touchPaused) {
+          startSlideTimer();
+          touchPaused = false;
+        }
+      }, 1000);
+    });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      stopSlideTimer();
+      startSlideTimer();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      stopSlideTimer();
+      startSlideTimer();
+    }
+  });
   }
 
   // Start the slider
