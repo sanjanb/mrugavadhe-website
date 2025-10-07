@@ -22,22 +22,26 @@ Official website for Sri Mallikarjuna Temple, Mrugavadhe - an ancient Shiva temp
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js 16+ and npm 8+
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/sanjanb/mrugavadhe-website.git
 cd mrugavadhe-website
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start development server:
+
 ```bash
 npm run dev
 ```
@@ -116,11 +120,13 @@ mrugavadhe-website/
 ## Deployment
 
 ### Static Hosting (Recommended)
+
 - Netlify, Vercel, GitHub Pages, or similar
 - Run `npm run build` to create production files
 - Upload `dist/` folder contents
 
 ### Traditional Hosting
+
 - Any web server (Apache, Nginx)
 - Copy production files to web root
 - Configure security headers (see `.htaccess` or `nginx.conf`)
@@ -128,6 +134,7 @@ mrugavadhe-website/
 ## Contact
 
 **Sri Mallikarjuna Temple Trust**
+
 - Website: https://mrugavadhe-temple.com
 - Email: info@mallikarjunatemple.org
 - Location: Mrugavadhe Village, Thirthahalli, Karnataka, India
