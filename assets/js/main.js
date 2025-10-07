@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Error handling
     setupGlobalErrorHandling();
+    
+    // Mobile-specific enhancements
+    initMobileEnhancements();
   } catch (error) {
     console.error("Error initializing website:", error);
     // Fallback functionality or user notification
