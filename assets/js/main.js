@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Mobile-specific enhancements
     initMobileEnhancements();
+    initHeroOrnamentDynamicData();
   } catch (error) {
     console.error("Error initializing website:", error);
     // Fallback functionality or user notification
@@ -45,6 +46,68 @@ function registerServiceWorker() {
           console.log("SW registration failed: ", registrationError);
         });
     });
+  }
+}
+
+// Dynamic data for hero ornament (date + upcoming festival)
+function initHeroOrnamentDynamicData() {
+  try {
+    const todayLabelEl = document.getElementById("heroTodayLabel");
+    const nextFestivalEl = document.getElementById("nextFestival");
+    if (!todayLabelEl || !nextFestivalEl) return;
+
+    const now = new Date();
+    const weekday = now.toLocaleDateString(undefined, { weekday: "long" });
+    const dateStr = now.toLocaleDateString(undefined, {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+    todayLabelEl.textContent = `${weekday}, ${dateStr}`;
+
+    // Simple static festival calendar (can later be enhanced / fetched)
+    const festivals = [
+      { date: "01-14", name: "Makara Sankranti" },
+      { date: "02-26", name: "Maha Shivaratri" },
+      { date: "08-15", name: "Independence Day Pooja" },
+      { date: "09-07", name: "Ganesh Chaturthi" },
+      { date: "10-12", name: "Navaratri Begins" },
+      { date: "10-31", name: "Kartika Deepotsava" },
+      { date: "11-01", name: "Rajyotsava" },
+      { date: "11-12", name: "Deepavali" },
+    ];
+    const y = now.getFullYear();
+    const todayNum = +`${String(now.getMonth() + 1).padStart(2, "0")}-${String(
+      now.getDate()
+    ).padStart(2, "0")}`.replace("-", "");
+    let upcoming = null;
+    for (const f of festivals) {
+      const [mm, dd] = f.date.split("-");
+      const candidate = new Date(`${y}-${mm}-${dd}T00:00:00`);
+      const candidateNum = +`${mm}${dd}`;
+      if (candidateNum >= todayNum) {
+        upcoming = { ...f, dateObj: candidate };
+        break;
+      }
+    }
+    if (!upcoming) {
+      // next year's first festival
+      const f = festivals[0];
+      const [mm, dd] = f.date.split("-");
+      upcoming = { ...f, dateObj: new Date(`${y + 1}-${mm}-${dd}T00:00:00`) };
+    }
+    const diffDays = Math.round(
+      (upcoming.dateObj - now) / (1000 * 60 * 60 * 24)
+    );
+    const when =
+      diffDays === 0
+        ? "Today"
+        : diffDays === 1
+        ? "Tomorrow"
+        : `In ${diffDays} days`;
+    nextFestivalEl.textContent = `${when}: ${upcoming.name}`;
+  } catch (e) {
+    console.warn("Hero ornament dynamic data error", e);
   }
 }
 
